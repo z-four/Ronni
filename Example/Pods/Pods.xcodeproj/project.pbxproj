@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		246225C4A8D073B4B46CE45077F5FFA0 /* Pods-Ronni_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE8148BC15F235E0E83255186B30019 /* Pods-Ronni_Example-dummy.m */; };
+		3A15D223452D5EA4F5E63869BC2256CD /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2492C1DD49C72BD8A7E51FA8F943D /* Animator.swift */; };
+		3BDF9C665483333CB6C54DC21B10E789 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4367BCDE0425060C00DA292882F5AE83 /* NotificationView.swift */; };
+		42916C28F975FF18F42E16E305200C31 /* Color+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC88FECDBB8DE3F5CB2E1167189A6E /* Color+Utils.swift */; };
+		73DDC0C89F4DAD9DAA8ECBDD5C2325F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		7EE4574CB3B491C34089478F6B7227C7 /* Ronni.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200365432A1920738FD7B5358E38FB0 /* Ronni.swift */; };
+		A4EADB3587DBC640C61FAA88CA5DBFDC /* Pods-Ronni_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C01CE8245FFD2D492B7466F2BBFBE17 /* Pods-Ronni_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCA6B45FE8674C76F7487A1484C074D8 /* Ronni+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7133464CD859B9175B3A07B00B95AED9 /* Ronni+Utils.swift */; };
+		C3DAFC191F22196E00911A47 /* ErrorNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D5F459381D724E8C71B9E2E51703B8 /* ErrorNotificationView.xib */; };
+		C3DAFC1A1F22197300911A47 /* SuccessNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813809387278D394983E86845AFC42EC /* SuccessNotificationView.xib */; };
+		C3DAFC1B1F22198600911A47 /* ProgressNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E38817AAA561297E6FB2847E91F944 /* ProgressNotificationView.xib */; };
+		C3DAFC1C1F22198800911A47 /* InfoNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6B2CBAF16A1CC6ECF73ADA2C11DD68 /* InfoNotificationView.xib */; };
+		C3DAFC1D1F22199600911A47 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46D532B147AADB8D9BE1A690E0453A46 /* Icons.xcassets */; };
+		C87B5F6DA15573B6C9F76C562AF1355E /* Ronni-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D43A34F37D784E4CE4F84F08E6DD7D7B /* Ronni-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD20E43A50088C523E1AFDB2D5CA9E06 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0371AA399858B262A3DC8AA291F58 /* ProgressView.swift */; };
+		E13FA24AF893922098E0BE0DC2E62C67 /* Ronni-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B599AD5D3611423564F847B3D784433 /* Ronni-dummy.m */; };
+		F63DAFE2549A82F334ACA5F220A3C27F /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF3FABDA33B2F645933820C72C05C5 /* Bundle+Utils.swift */; };
+		F76837873F198110B9B466508C836D8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BF76D16D3B77C0B5601C9AAB1B2BD23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 591FA11C9DB9D158060BAF74A52CF93C;
+			remoteInfo = Ronni;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03FF3FABDA33B2F645933820C72C05C5 /* Bundle+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
+		04CC88FECDBB8DE3F5CB2E1167189A6E /* Color+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Color+Utils.swift"; sourceTree = "<group>"; };
+		0A0807C7ABA112DADCF06307F3075AFA /* Ronni-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ronni-prefix.pch"; sourceTree = "<group>"; };
+		16B0371AA399858B262A3DC8AA291F58 /* ProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		29A2492C1DD49C72BD8A7E51FA8F943D /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		2D7791DF969BCDF61B4CDB6CF518E28F /* Pods-Ronni_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ronni_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		2F6B2CBAF16A1CC6ECF73ADA2C11DD68 /* InfoNotificationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = InfoNotificationView.xib; sourceTree = "<group>"; };
+		2F77CE4A62964FA577856E6B4EDF0ACB /* Pods-Ronni_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ronni_Example-resources.sh"; sourceTree = "<group>"; };
+		39EE93A6E7FF053DD9BD2EB138B3F81A /* Pods_Ronni_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ronni_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4367BCDE0425060C00DA292882F5AE83 /* NotificationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		46D532B147AADB8D9BE1A690E0453A46 /* Icons.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		53ADA39DAAB185BDAE8425A5787C7544 /* Pods-Ronni_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ronni_Example.release.xcconfig"; sourceTree = "<group>"; };
+		6C01CE8245FFD2D492B7466F2BBFBE17 /* Pods-Ronni_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ronni_Example-umbrella.h"; sourceTree = "<group>"; };
+		6FE4DADAF96194140A5F67DA89A33854 /* Pods-Ronni_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ronni_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7133464CD859B9175B3A07B00B95AED9 /* Ronni+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Ronni+Utils.swift"; sourceTree = "<group>"; };
+		78E38817AAA561297E6FB2847E91F944 /* ProgressNotificationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ProgressNotificationView.xib; sourceTree = "<group>"; };
+		7B599AD5D3611423564F847B3D784433 /* Ronni-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ronni-dummy.m"; sourceTree = "<group>"; };
+		813809387278D394983E86845AFC42EC /* SuccessNotificationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SuccessNotificationView.xib; sourceTree = "<group>"; };
+		8C231D518C4859324E6B72D1BAE3B02F /* Pods-Ronni_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Ronni_Example.modulemap"; sourceTree = "<group>"; };
+		9200365432A1920738FD7B5358E38FB0 /* Ronni.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Ronni.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A010656F98874568FF2E26C36EE9C41B /* ResourceBundle-Ronni-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Ronni-Info.plist"; sourceTree = "<group>"; };
+		B601D9ED73A0360BD2BB0759819754BF /* Ronni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ronni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB78D8C827A5016A3A21B67BEB28F515 /* Pods-Ronni_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ronni_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C97BAF7A64D6DCBDB908A50A630C4184 /* Pods-Ronni_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ronni_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CA07C9A3570AFA8DD9BD93EC55E1F77E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D43A34F37D784E4CE4F84F08E6DD7D7B /* Ronni-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ronni-umbrella.h"; sourceTree = "<group>"; };
+		DCE8148BC15F235E0E83255186B30019 /* Pods-Ronni_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ronni_Example-dummy.m"; sourceTree = "<group>"; };
+		E2D5F459381D724E8C71B9E2E51703B8 /* ErrorNotificationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ErrorNotificationView.xib; sourceTree = "<group>"; };
+		E57589A15936BDF6C3F32B97350E535C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9D8E87A3F14B3C13C838EF1BFAE7124 /* Ronni.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Ronni.xcconfig; sourceTree = "<group>"; };
+		FD6843A99FE55E72C843B4FFD1659F4B /* Ronni.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Ronni.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67152C5D786BCC199A040451E2473118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73DDC0C89F4DAD9DAA8ECBDD5C2325F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E637E28AC4C12B772B90062DDBE3F2CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76837873F198110B9B466508C836D8C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		018FCF4399C0DC0419AB080C1B118E8B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E57589A15936BDF6C3F32B97350E535C /* Info.plist */,
+				A010656F98874568FF2E26C36EE9C41B /* ResourceBundle-Ronni-Info.plist */,
+				FD6843A99FE55E72C843B4FFD1659F4B /* Ronni.modulemap */,
+				F9D8E87A3F14B3C13C838EF1BFAE7124 /* Ronni.xcconfig */,
+				7B599AD5D3611423564F847B3D784433 /* Ronni-dummy.m */,
+				0A0807C7ABA112DADCF06307F3075AFA /* Ronni-prefix.pch */,
+				D43A34F37D784E4CE4F84F08E6DD7D7B /* Ronni-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Ronni";
+			sourceTree = "<group>";
+		};
+		0A579F51D8FB41483FE3193FE1451686 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7647991916140580E858C79FD8D1FDAB /* Pods-Ronni_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6F080CC196E8BEB2FC35758AEFE7679D /* Ronni */ = {
+			isa = PBXGroup;
+			children = (
+				C858C94BDCEC14669970B18674AD9A0B /* Classes */,
+			);
+			path = Ronni;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7647991916140580E858C79FD8D1FDAB /* Pods-Ronni_Example */ = {
+			isa = PBXGroup;
+			children = (
+				CA07C9A3570AFA8DD9BD93EC55E1F77E /* Info.plist */,
+				8C231D518C4859324E6B72D1BAE3B02F /* Pods-Ronni_Example.modulemap */,
+				6FE4DADAF96194140A5F67DA89A33854 /* Pods-Ronni_Example-acknowledgements.markdown */,
+				2D7791DF969BCDF61B4CDB6CF518E28F /* Pods-Ronni_Example-acknowledgements.plist */,
+				DCE8148BC15F235E0E83255186B30019 /* Pods-Ronni_Example-dummy.m */,
+				BB78D8C827A5016A3A21B67BEB28F515 /* Pods-Ronni_Example-frameworks.sh */,
+				2F77CE4A62964FA577856E6B4EDF0ACB /* Pods-Ronni_Example-resources.sh */,
+				6C01CE8245FFD2D492B7466F2BBFBE17 /* Pods-Ronni_Example-umbrella.h */,
+				C97BAF7A64D6DCBDB908A50A630C4184 /* Pods-Ronni_Example.debug.xcconfig */,
+				53ADA39DAAB185BDAE8425A5787C7544 /* Pods-Ronni_Example.release.xcconfig */,
+			);
+			name = "Pods-Ronni_Example";
+			path = "Target Support Files/Pods-Ronni_Example";
+			sourceTree = "<group>";
+		};
+		7715CF2A3E2C290C8AB8B643F14D3B4D /* Ronni */ = {
+			isa = PBXGroup;
+			children = (
+				B1F9C0209F3FDA13F8CC5FC772039AAE /* Resources */,
+			);
+			path = Ronni;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				FC529F1EC1E939A6786F8C9EB8A35CF4 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C4DA78B1720E3F7A6E1F88783AB11633 /* Products */,
+				0A579F51D8FB41483FE3193FE1451686 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8165F1C21036971C0832A18FFB678188 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				29A2492C1DD49C72BD8A7E51FA8F943D /* Animator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		88490D552324C8D64FF9331B41503CE8 /* Ronni */ = {
+			isa = PBXGroup;
+			children = (
+				90C16283EF1E643ABFC8C4CD464EC86E /* Resources */,
+				6F080CC196E8BEB2FC35758AEFE7679D /* Ronni */,
+				018FCF4399C0DC0419AB080C1B118E8B /* Support Files */,
+			);
+			name = Ronni;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		90C16283EF1E643ABFC8C4CD464EC86E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7715CF2A3E2C290C8AB8B643F14D3B4D /* Ronni */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B1F9C0209F3FDA13F8CC5FC772039AAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46D532B147AADB8D9BE1A690E0453A46 /* Icons.xcassets */,
+				E2D5F459381D724E8C71B9E2E51703B8 /* ErrorNotificationView.xib */,
+				2F6B2CBAF16A1CC6ECF73ADA2C11DD68 /* InfoNotificationView.xib */,
+				78E38817AAA561297E6FB2847E91F944 /* ProgressNotificationView.xib */,
+				813809387278D394983E86845AFC42EC /* SuccessNotificationView.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4DA78B1720E3F7A6E1F88783AB11633 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39EE93A6E7FF053DD9BD2EB138B3F81A /* Pods_Ronni_Example.framework */,
+				B601D9ED73A0360BD2BB0759819754BF /* Ronni.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C858C94BDCEC14669970B18674AD9A0B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9200365432A1920738FD7B5358E38FB0 /* Ronni.swift */,
+				E24B5DA1365EF02C51FE11FBF1645461 /* Extensions */,
+				8165F1C21036971C0832A18FFB678188 /* Utils */,
+				DA0FC3C13A80B2E4315F959EF89EDF4B /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DA0FC3C13A80B2E4315F959EF89EDF4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4367BCDE0425060C00DA292882F5AE83 /* NotificationView.swift */,
+				16B0371AA399858B262A3DC8AA291F58 /* ProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E24B5DA1365EF02C51FE11FBF1645461 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03FF3FABDA33B2F645933820C72C05C5 /* Bundle+Utils.swift */,
+				04CC88FECDBB8DE3F5CB2E1167189A6E /* Color+Utils.swift */,
+				7133464CD859B9175B3A07B00B95AED9 /* Ronni+Utils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FC529F1EC1E939A6786F8C9EB8A35CF4 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88490D552324C8D64FF9331B41503CE8 /* Ronni */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6623C9757072930F8592DFEE8D8083B0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4EADB3587DBC640C61FAA88CA5DBFDC /* Pods-Ronni_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBE4C27BFD2BF4A8B298CE31736B3DCD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C87B5F6DA15573B6C9F76C562AF1355E /* Ronni-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		150720603862CF6E9A1C52A5E3C65AB9 /* Pods-Ronni_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF17061F58FB678660C9F41D42CE758E /* Build configuration list for PBXNativeTarget "Pods-Ronni_Example" */;
+			buildPhases = (
+				51D0E31D3552D5A020E27BC4A22EFB63 /* Sources */,
+				67152C5D786BCC199A040451E2473118 /* Frameworks */,
+				6623C9757072930F8592DFEE8D8083B0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				995F342C895A7D8EFD42952CE64E5AE9 /* PBXTargetDependency */,
+			);
+			name = "Pods-Ronni_Example";
+			productName = "Pods-Ronni_Example";
+			productReference = 39EE93A6E7FF053DD9BD2EB138B3F81A /* Pods_Ronni_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		591FA11C9DB9D158060BAF74A52CF93C /* Ronni */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25EB9DDB456FFA5948293CCE156D8885 /* Build configuration list for PBXNativeTarget "Ronni" */;
+			buildPhases = (
+				93405720170A4A3035AE31FA0BE7E357 /* Sources */,
+				E637E28AC4C12B772B90062DDBE3F2CD /* Frameworks */,
+				1840920F3B2627A577E592DC48118184 /* Resources */,
+				FBE4C27BFD2BF4A8B298CE31736B3DCD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ronni;
+			productName = Ronni;
+			productReference = B601D9ED73A0360BD2BB0759819754BF /* Ronni.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C4DA78B1720E3F7A6E1F88783AB11633 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				150720603862CF6E9A1C52A5E3C65AB9 /* Pods-Ronni_Example */,
+				591FA11C9DB9D158060BAF74A52CF93C /* Ronni */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1840920F3B2627A577E592DC48118184 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DAFC1C1F22198800911A47 /* InfoNotificationView.xib in Resources */,
+				C3DAFC1B1F22198600911A47 /* ProgressNotificationView.xib in Resources */,
+				C3DAFC191F22196E00911A47 /* ErrorNotificationView.xib in Resources */,
+				C3DAFC1A1F22197300911A47 /* SuccessNotificationView.xib in Resources */,
+				C3DAFC1D1F22199600911A47 /* Icons.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51D0E31D3552D5A020E27BC4A22EFB63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				246225C4A8D073B4B46CE45077F5FFA0 /* Pods-Ronni_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93405720170A4A3035AE31FA0BE7E357 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A15D223452D5EA4F5E63869BC2256CD /* Animator.swift in Sources */,
+				F63DAFE2549A82F334ACA5F220A3C27F /* Bundle+Utils.swift in Sources */,
+				42916C28F975FF18F42E16E305200C31 /* Color+Utils.swift in Sources */,
+				3BDF9C665483333CB6C54DC21B10E789 /* NotificationView.swift in Sources */,
+				CD20E43A50088C523E1AFDB2D5CA9E06 /* ProgressView.swift in Sources */,
+				BCA6B45FE8674C76F7487A1484C074D8 /* Ronni+Utils.swift in Sources */,
+				E13FA24AF893922098E0BE0DC2E62C67 /* Ronni-dummy.m in Sources */,
+				7EE4574CB3B491C34089478F6B7227C7 /* Ronni.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		995F342C895A7D8EFD42952CE64E5AE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Ronni;
+			target = 591FA11C9DB9D158060BAF74A52CF93C /* Ronni */;
+			targetProxy = 1BF76D16D3B77C0B5601C9AAB1B2BD23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		083CEA8751EF88CC84649AB79DE37425 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C97BAF7A64D6DCBDB908A50A630C4184 /* Pods-Ronni_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Ronni_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Ronni_Example/Pods-Ronni_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Ronni_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		16DFCF89DC2F5E735D05879E3DBE9A76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9D8E87A3F14B3C13C838EF1BFAE7124 /* Ronni.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Ronni/Ronni-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Ronni/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Ronni/Ronni.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Ronni;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		41DBA9A4F1BAEF10EFF1D106557E8B16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53ADA39DAAB185BDAE8425A5787C7544 /* Pods-Ronni_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Ronni_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Ronni_Example/Pods-Ronni_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Ronni_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4AB230B7DE337CC627899F446DDDFE54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9D8E87A3F14B3C13C838EF1BFAE7124 /* Ronni.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Ronni/Ronni-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Ronni/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Ronni/Ronni.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Ronni;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25EB9DDB456FFA5948293CCE156D8885 /* Build configuration list for PBXNativeTarget "Ronni" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AB230B7DE337CC627899F446DDDFE54 /* Debug */,
+				16DFCF89DC2F5E735D05879E3DBE9A76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF17061F58FB678660C9F41D42CE758E /* Build configuration list for PBXNativeTarget "Pods-Ronni_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				083CEA8751EF88CC84649AB79DE37425 /* Debug */,
+				41DBA9A4F1BAEF10EFF1D106557E8B16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

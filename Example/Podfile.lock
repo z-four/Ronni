@@ -1,0 +1,16 @@
+PODS:
+  - Ronni (0.1.0)
+
+DEPENDENCIES:
+  - Ronni (from `../`)
+
+EXTERNAL SOURCES:
+  Ronni:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Ronni: 6b4f2efbccfae8fe5349471b798ab9838bb69f95
+
+PODFILE CHECKSUM: dfccfa1cf5b80f8de232480190a433251393c579
+
+COCOAPODS: 1.1.1

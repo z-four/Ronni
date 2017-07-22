@@ -1,0 +1,6 @@
+use_frameworks!
+
+target ‘Ronni_Example' do
+  pod ‘Ronni’, :path => '../'
+
+end

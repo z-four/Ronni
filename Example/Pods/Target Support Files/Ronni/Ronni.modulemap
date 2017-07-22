@@ -1,0 +1,6 @@
+framework module Ronni {
+  umbrella header "Ronni-umbrella.h"
+
+  export *
+  module * { export * }
+}
