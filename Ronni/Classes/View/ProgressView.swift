@@ -16,6 +16,8 @@ public class ProgressView: UIView {
     private let kAnimationType = "transform.rotation"
     private let kAnimationKey = "rotationAnimation"
     
+    public let progressLayer = CAShapeLayer()
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createLayers()
@@ -30,27 +32,27 @@ public class ProgressView: UIView {
         let centerPoint = CGPoint(x: frame.width / 2, y: frame.height / 2)
         let startAngle = CGFloat(3 * Double.pi / 2)
         let endAngle = CGFloat(Double.pi)
-        //let color = UIColor.lightGray.withAlphaComponent(0.2)
-      
-//        let backgroundLayer = getProgressViewLayer(centerPoint: centerPoint, startAngle: startAngle, endAngle: endAngle, clockwise: false, color: color)
-        let progressLayer = getProgressViewLayer(centerPoint: centerPoint, startAngle: startAngle, endAngle: endAngle)
+        
+        let progressLayer = getProgressLayer(centerPoint: centerPoint, startAngle: startAngle, endAngle: endAngle)
         
         layer.addSublayer(progressLayer)
-       // layer.addSublayer(backgroundLayer)
     }
     
-    private func getProgressViewLayer (centerPoint: CGPoint, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool = true, color: UIColor = UIColor.white) -> CAShapeLayer {
+    private func getProgressLayer (centerPoint: CGPoint, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool = true, color: UIColor = UIColor.white) -> CAShapeLayer {
         
-        let layer = CAShapeLayer()
-        layer.path = UIBezierPath(arcCenter: centerPoint, radius: centerPoint.x - kLineWidth, startAngle: startAngle, endAngle:endAngle, clockwise: clockwise).cgPath
+        progressLayer.path = UIBezierPath(arcCenter: centerPoint, radius: centerPoint.x - kLineWidth, startAngle: startAngle, endAngle:endAngle, clockwise: clockwise).cgPath
         layer.backgroundColor = UIColor.clear.cgColor
-        layer.fillColor = nil
-        layer.lineWidth = kLineWidth
-        layer.strokeStart = 0.0
-        layer.strokeEnd = 1.0
-        layer.strokeColor = color.cgColor
+        progressLayer.fillColor = nil
+        progressLayer.lineWidth = kLineWidth
+        progressLayer.strokeStart = 0.0
+        progressLayer.strokeEnd = 1.0
+        progressLayer.strokeColor = color.cgColor
         
-        return layer
+        return progressLayer
+    }
+    
+    public func setStrokeColor (color: UIColor) {
+        progressLayer.strokeColor = color.cgColor
     }
     
     public func stop() {
