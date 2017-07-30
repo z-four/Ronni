@@ -65,7 +65,22 @@ public class NotificationView: UIView {
     func configure (message: Message, style: Style) {
         self.style = style
         
-        if style == .loading {
+        if style == .toast {
+            if let unwrappedBackgroundColor = message.backgroundColor {
+                textContainerView.backgroundColor = unwrappedBackgroundColor
+                self.backgroundColor = UIColor.clear
+            }
+            
+            descriptionLabel.textColor = message.titleTextColor
+            descriptionLabel.text = message.title
+            return
+            
+        } else if style == .loading {
+            if let unwrappedBackgroundColor = message.backgroundColor {
+                containerView.backgroundColor = unwrappedBackgroundColor
+                self.backgroundColor = UIColor.clear
+            }
+            
             descriptionLabel.textColor = message.titleTextColor
             descriptionLabel.text = message.title
             return

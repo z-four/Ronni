@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		8265F9B15139D41CFCDB041D /* Pods_Ronni_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B746F03732109E00FA822D43 /* Pods_Ronni_Example.framework */; };
 		C3AF7EDA1F2214F900648AFE /* Ronni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3AF7ED91F2214F900648AFE /* Ronni.framework */; };
+		C3CB126B1F2B770000DBA62A /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3CB126A1F2B770000DBA62A /* Pacifico.ttf */; };
 		C3CE39381F22311000623716 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE39371F22311000623716 /* CustomView.xib */; };
 		C3CE393A1F22345C00623716 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE39391F22345C00623716 /* CustomView.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		8DC6BE20C8DF789FA3F6BFFF /* Pods-Ronni_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ronni_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ronni_Example/Pods-Ronni_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B746F03732109E00FA822D43 /* Pods_Ronni_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ronni_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AF7ED91F2214F900648AFE /* Ronni.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ronni.framework; path = "../../../Library/Developer/Xcode/DerivedData/Ronni-bckaniwyzjahntbtqikqumzwmlxv/Build/Products/Debug-iphoneos/Ronni/Ronni.framework"; sourceTree = "<group>"; };
+		C3CB126A1F2B770000DBA62A /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		C3CE39371F22311000623716 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		C3CE39391F22345C00623716 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				C3CB126A1F2B770000DBA62A /* Pacifico.ttf */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				C3CE39371F22311000623716 /* CustomView.xib */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				C3CB126B1F2B770000DBA62A /* Pacifico.ttf in Resources */,
 				C3CE39381F22311000623716 /* CustomView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,

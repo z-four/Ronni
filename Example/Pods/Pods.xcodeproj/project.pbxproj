@@ -15,6 +15,7 @@
 		7EE4574CB3B491C34089478F6B7227C7 /* Ronni.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200365432A1920738FD7B5358E38FB0 /* Ronni.swift */; };
 		A4EADB3587DBC640C61FAA88CA5DBFDC /* Pods-Ronni_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C01CE8245FFD2D492B7466F2BBFBE17 /* Pods-Ronni_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCA6B45FE8674C76F7487A1484C074D8 /* Ronni+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7133464CD859B9175B3A07B00B95AED9 /* Ronni+Utils.swift */; };
+		C38B83741F2B50010048A667 /* ToastNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C38B83731F2B50010048A667 /* ToastNotificationView.xib */; };
 		C3DAFC191F22196E00911A47 /* ErrorNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D5F459381D724E8C71B9E2E51703B8 /* ErrorNotificationView.xib */; };
 		C3DAFC1A1F22197300911A47 /* SuccessNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813809387278D394983E86845AFC42EC /* SuccessNotificationView.xib */; };
 		C3DAFC1B1F22198600911A47 /* ProgressNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E38817AAA561297E6FB2847E91F944 /* ProgressNotificationView.xib */; };
@@ -62,6 +63,7 @@
 		A010656F98874568FF2E26C36EE9C41B /* ResourceBundle-Ronni-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Ronni-Info.plist"; sourceTree = "<group>"; };
 		B601D9ED73A0360BD2BB0759819754BF /* Ronni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ronni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB78D8C827A5016A3A21B67BEB28F515 /* Pods-Ronni_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ronni_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C38B83731F2B50010048A667 /* ToastNotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastNotificationView.xib; sourceTree = "<group>"; };
 		C97BAF7A64D6DCBDB908A50A630C4184 /* Pods-Ronni_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ronni_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CA07C9A3570AFA8DD9BD93EC55E1F77E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -204,6 +206,7 @@
 				2F6B2CBAF16A1CC6ECF73ADA2C11DD68 /* InfoNotificationView.xib */,
 				78E38817AAA561297E6FB2847E91F944 /* ProgressNotificationView.xib */,
 				813809387278D394983E86845AFC42EC /* SuccessNotificationView.xib */,
+				C38B83731F2B50010048A667 /* ToastNotificationView.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DAFC1C1F22198800911A47 /* InfoNotificationView.xib in Resources */,
+				C38B83741F2B50010048A667 /* ToastNotificationView.xib in Resources */,
 				C3DAFC1B1F22198600911A47 /* ProgressNotificationView.xib in Resources */,
 				C3DAFC191F22196E00911A47 /* ErrorNotificationView.xib in Resources */,
 				C3DAFC1A1F22197300911A47 /* SuccessNotificationView.xib in Resources */,

@@ -11,12 +11,14 @@ public typealias EventListener = (Event) -> Void
 private let instance = Ronni()
 
 public class Ronni {
-    let kNotificationViewTag = 1919
+    let kNotificationViewTag = 0404
     
-    var isShowImmediately = false
-    var isHideImmediately = false
     var isShowAnimationFinished = true
+    
+    var animInterval: TimeInterval = Animator.kNotificationMoveAnimationDuration
     var duration: Duration = .automatic
+    var currPosition: Position = .top
+    var newPosition: Position = .top
     
     public static var events: [EventListener] = []
     
@@ -31,6 +33,8 @@ public class Ronni {
             if !isShowAnimationFinished { return }
             isShowAnimationFinished = false
             
+            currPosition = newPosition
+            
             if let notificationView = view != nil ? view! : getNotificatonView(navController: navController, style: style, message: message, didButtonClick:  {
                 self.notify(event: .didButtonClick)
                 
@@ -41,15 +45,15 @@ public class Ronni {
         }
     }
 
-    func hide (_ navController: UINavigationController, view: UIView, durationInterval: TimeInterval = 0.0, complete: @escaping () -> Void = {}) {
-        let duration = isHideImmediately ? 0 : Animator.kNotificationMoveAnimationDuration
-        isHideImmediately = false
+    func hide (_ navController: UINavigationController, view: UIView, duration: TimeInterval = Animator.kNotificationMoveAnimationDuration, delay: TimeInterval = 0.0, complete: @escaping () -> Void = {}) {
         self.notify(event: .willHide)
         
-        Animator.move(out: true, view: view, duration: duration, delay: durationInterval, onFinished: {
+        Animator.move(out: true, view: view, position: currPosition, duration: animInterval, delay: delay, onFinished: {
             view.removeFromSuperview()
             
+            self.animInterval = Animator.kNotificationMoveAnimationDuration
             self.notify(event: .didHide)
+            
             complete()
         })
     }
@@ -68,24 +72,25 @@ public class Ronni {
             visibleViewController.view.layoutIfNeeded()
             
             if let containerView = (view as? NotificationView)?.containerView {
-                view.frame.origin.y = -containerView.frame.size.height
+                view.frame.origin.y = currPosition == .top ? -containerView.frame.size.height
+                    : visibleViewController.view.bounds.maxY
                 view.frame.size = containerView.frame.size
             } else {
-                view.frame.origin.y = -view.frame.size.height
+                view.frame.origin.y = currPosition == .top ? -view.frame.size.height
+                : visibleViewController.view.bounds.maxY
             }
         }
     }
     
     private func present(_ navController: UINavigationController, view: UIView) {
-        let duration = isShowImmediately ? 0 : Animator.kNotificationMoveAnimationDuration
-        isShowImmediately = false
-        Animator.move(out: false, view: view, duration: duration, onFinished: {
+        Animator.move(out: false, view: view, position: currPosition, duration: animInterval, onFinished: {
             self.notify(event: .didShow)
             self.isShowAnimationFinished = true
+            self.animInterval = Animator.kNotificationMoveAnimationDuration
             
             let durationInterval = self.getDurationInterval(duration: self.duration)
             if durationInterval != -1 {
-                self.hide(navController, view: view, durationInterval: durationInterval)
+                self.hide(navController, view: view, delay: durationInterval)
             }
         })
     }
@@ -93,41 +98,47 @@ public class Ronni {
 
 extension Ronni {
 
-    public static func show(to: UINavigationController, message: Message, style: Style, duration: Duration = .automatic, immediately: Bool = false) {
-        instance.isShowImmediately = immediately
+    public static func show(to: UINavigationController, message: Message, style: Style, duration: Duration = .automatic, position: Position = .top, animTime: TimeInterval = Animator.kNotificationMoveAnimationDuration) {
+        instance.animInterval = animTime
+        instance.newPosition = position
         instance.duration = duration
         instance.show(to, view: nil, style: style, message: message)
     }
     
-    public static func show(to: UINavigationController, message: Message, duration: Duration = .automatic, immediately: Bool = false) {
-        instance.isShowImmediately = immediately
+    public static func show(to: UINavigationController, message: Message, duration: Duration = .automatic, position: Position = .top, animTime: TimeInterval = Animator.kNotificationMoveAnimationDuration) {
+        instance.animInterval = animTime
+        instance.newPosition = position
         instance.duration = duration
         instance.show(to, view: nil, style: .success, message: message)
     }
     
-    public static func show(to: UINavigationController, view: UIView, duration: Duration = .automatic, immediately: Bool = false) {
-        instance.isShowImmediately = immediately
+    public static func show(to: UINavigationController, view: UIView, duration: Duration = .automatic, position: Position = .top, animTime: TimeInterval = Animator.kNotificationMoveAnimationDuration) {
+        instance.animInterval = animTime
+        instance.newPosition = position
         instance.duration = duration
         instance.show(to, view: view, style: .success, message: nil)
     }
     
-    public static func show(to: UINavigationController, text: String, style: Style, duration: Duration = .automatic, immediately: Bool = false) {
-        instance.isShowImmediately = immediately
-        instance.duration = duration
+    public static func show(to: UINavigationController, text: String, style: Style, duration: Duration = .automatic, position: Position = .top, animTime: TimeInterval = Animator.kNotificationMoveAnimationDuration) {
         let message = instance.getEmptyMessage(text: text)
+        instance.animInterval = animTime
+        instance.newPosition = position
+        instance.duration = duration
         instance.show(to, view: nil, style: style, message: message)
     }
     
-    public static func show(to: UINavigationController, text: String, backgroundColor: UIColor, duration: Duration = .automatic, immediately: Bool = false) {
-        instance.isShowImmediately = immediately
-        instance.duration = duration
+    public static func show(to: UINavigationController, text: String, style: Style, backgroundColor: UIColor, duration: Duration = .automatic, position: Position = .top, animTime: TimeInterval = Animator.kNotificationMoveAnimationDuration) {
         let message = instance.getEmptyMessage(text: text)
-        instance.show(to, view: nil, style: .success, message: message)
+        message.backgroundColor = backgroundColor
+        instance.animInterval = animTime
+        instance.duration = duration
+        instance.newPosition = position
+        instance.show(to, view: nil, style: style, message: message)
     }
     
-    public static func hide(from: UINavigationController, immediately: Bool = false) {
-        instance.isHideImmediately = immediately
+    public static func hide(from: UINavigationController, animTime: TimeInterval = Animator.kNotificationMoveAnimationDuration) {
         if let lastNotification = instance.getLastNotification(navController: from) {
+            instance.animInterval = animTime
             instance.hide(from, view: lastNotification)
         }
     }

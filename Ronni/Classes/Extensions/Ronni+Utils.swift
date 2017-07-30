@@ -11,6 +11,12 @@ public enum Style: String {
     case error   = "ErrorNotificationView"
     case info    = "InfoNotificationView"
     case loading = "ProgressNotificationView"
+    case toast   = "ToastNotificationView"
+}
+
+public enum Position {
+    case top
+    case bottom
 }
 
 public enum Duration {
