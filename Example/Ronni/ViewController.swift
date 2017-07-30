@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     var navController: UINavigationController?
     
     var notificationPosition: Position = .top
-    var curr = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
