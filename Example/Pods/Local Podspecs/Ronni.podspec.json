@@ -1,19 +1,19 @@
 {
   "name": "Ronni",
-  "version": "0.1.0",
-  "summary": "A short description of Ronni.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/${USER_NAME}/Pod",
+  "version": "1.0.3",
+  "summary": "Library that will make the task of display messages simple",
+  "description": "A convenient and easy to use library that will make the task of display messages simple",
+  "homepage": "https://github.com/z-four/Ronni",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "${USER_NAME}": "${USER_EMAIL}"
+    "Dmitriy Zhyzhko": "zhyzhkodim@gmail.com"
   },
   "source": {
-    "git": "https://github.com/${USER_NAME}/Pod.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/z-four/Ronni.git",
+    "tag": "1.0.3"
   },
   "platforms": {
     "ios": "8.0"

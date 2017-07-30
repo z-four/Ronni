@@ -1,5 +1,5 @@
 PODS:
-  - Ronni (0.1.0)
+  - Ronni (1.0.3)
 
 DEPENDENCIES:
   - Ronni (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Ronni: 6b4f2efbccfae8fe5349471b798ab9838bb69f95
+  Ronni: bd246087439b586f65fc44c80a4ef91b5dccffa6
 
 PODFILE CHECKSUM: dfccfa1cf5b80f8de232480190a433251393c579
 
