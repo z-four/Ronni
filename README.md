@@ -1,5 +1,3 @@
-Ronni
-============
 
 <p align="center"> 
 <img height = "225px" src="/Images/logo.jpg">
