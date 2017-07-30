@@ -7,7 +7,7 @@ A convenient and easy to use library that will make the task of display messages
 
 
 ## Example
-![optimization](/Images/custom.gif)
+
 
 ## Usage
 
