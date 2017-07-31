@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Ronni'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'Library that will make the task of display messages simple'
 
 # This description is used to generate tags and improve search results.
