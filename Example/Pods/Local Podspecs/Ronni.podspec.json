@@ -1,6 +1,6 @@
 {
   "name": "Ronni",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "summary": "Library that will make the task of display messages simple",
   "description": "A convenient and easy to use library that will make the task of display messages simple",
   "homepage": "https://github.com/z-four/Ronni",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/z-four/Ronni.git",
-    "tag": "1.0.3"
+    "tag": "1.0.4"
   },
   "platforms": {
     "ios": "8.0"
@@ -21,7 +21,7 @@
   "source_files": "Ronni/Classes/**/*.swift",
   "resource_bundles": {
     "Ronni": [
-      "Ronni/Resources/**/*"
+      "Ronni/Resources/**/*.{xib,xcassets}"
     ]
   },
   "requires_arc": true

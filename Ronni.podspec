@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Ronni'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'Library that will make the task of display messages simple'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Ronni/Classes/**/*.swift'
-  s.resource_bundles = {'Ronni' => ['Ronni/Resources/**/*']}
+  s.resource_bundles = {'Ronni' => ['Ronni/Resources/**/*.{xib,xcassets}']}
 
   s.requires_arc = true
 
