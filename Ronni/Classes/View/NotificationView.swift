@@ -52,7 +52,10 @@ public class NotificationView: UIView {
                 resolvedBundle = Bundle.libraryBundle()
             }
         }
-        let arrayOfViews = resolvedBundle.loadNibNamed(name, owner: filesOwner, options: nil) ?? []
+        
+        let podBundle = Bundle(path: Bundle(for: Ronni.self).path(forResource: "Ronni", ofType: "bundle")!)
+       // podBundle?.loadNibNamed(name, owner: self, options: <#T##[AnyHashable : Any]?#>)
+        let arrayOfViews = podBundle?.loadNibNamed(name, owner: filesOwner, options: nil) ?? []
         
         if arrayOfViews.count > 0 {
             let notficationView = arrayOfViews[0] as! NotificationView

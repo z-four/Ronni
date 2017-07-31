@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="SuccessNotificationView" id="vFR-wh-F7G" customClass="NotificationView" customModule="Ronni">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ulc-Fu-Bjj" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izm-9Q-xxp" userLabel="Text Container">
+                            <rect key="frame" x="138" y="8" width="99" height="34"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k95-WQ-hSU">
+                                    <rect key="frame" x="10" y="8" width="79" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="k95-WQ-hSU" secondAttribute="trailing" constant="10" id="MFp-rD-5sY"/>
+                                <constraint firstItem="k95-WQ-hSU" firstAttribute="leading" secondItem="izm-9Q-xxp" secondAttribute="leading" constant="10" id="fxl-x8-bm7"/>
+                                <constraint firstItem="k95-WQ-hSU" firstAttribute="top" secondItem="izm-9Q-xxp" secondAttribute="top" constant="8" id="sJt-Ko-OYf"/>
+                                <constraint firstAttribute="bottom" secondItem="k95-WQ-hSU" secondAttribute="bottom" constant="8" id="v7l-s0-mVT"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="izm-9Q-xxp" firstAttribute="top" secondItem="Ulc-Fu-Bjj" secondAttribute="top" constant="8" id="9D2-dB-s4K"/>
+                        <constraint firstAttribute="bottom" secondItem="izm-9Q-xxp" secondAttribute="bottom" constant="7.5" id="DQH-FD-EJN"/>
+                        <constraint firstItem="izm-9Q-xxp" firstAttribute="centerX" secondItem="Ulc-Fu-Bjj" secondAttribute="centerX" id="Kho-2j-r2F"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="izm-9Q-xxp" secondAttribute="trailing" constant="16" id="VeN-Ye-sOx"/>
+                        <constraint firstItem="izm-9Q-xxp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ulc-Fu-Bjj" secondAttribute="leading" constant="16" id="rkk-Vt-HPg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ulc-Fu-Bjj" firstAttribute="top" secondItem="vFR-wh-F7G" secondAttribute="top" id="1bx-LH-PdR"/>
+                <constraint firstAttribute="trailing" secondItem="Ulc-Fu-Bjj" secondAttribute="trailing" id="AQr-Is-ByO"/>
+                <constraint firstItem="Ulc-Fu-Bjj" firstAttribute="leading" secondItem="vFR-wh-F7G" secondAttribute="leading" id="Zon-W5-EiI"/>
+            </constraints>
+            <connections>
+                <outlet property="containerView" destination="Ulc-Fu-Bjj" id="WMl-Ex-WVQ"/>
+                <outlet property="descriptionLabel" destination="k95-WQ-hSU" id="A9J-sc-eID"/>
+                <outlet property="textContainerView" destination="izm-9Q-xxp" id="osC-oF-F1U"/>
+            </connections>
+            <point key="canvasLocation" x="151.5" y="65.5"/>
+        </view>
+    </objects>
+</document>
