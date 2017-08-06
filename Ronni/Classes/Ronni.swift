@@ -24,13 +24,13 @@ public class Ronni {
     
     func show (_ navController: UINavigationController, view: UIView?, style: Style, message: Message?) {
         if let lastNotification = getLastNotification(navController: navController) {
-            if !isShowAnimationFinished { return }
+           // if !isShowAnimationFinished { return }
             
             hide(navController, view: lastNotification, complete: {
                 self.show(navController, view: view, style: style, message: message)
             })
         } else {
-            if !isShowAnimationFinished { return }
+           // if !isShowAnimationFinished { return }
             isShowAnimationFinished = false
             
             currPosition = newPosition
