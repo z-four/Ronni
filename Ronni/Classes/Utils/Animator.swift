@@ -12,8 +12,8 @@ import UIKit
 class Animator {
     static let kNotificationMoveAnimationDuration = 0.52
     static let kNotificationMoveAnimationDelay = 0.1
-    static let kNotificationMoveAnimationSpringDamping: CGFloat = 0.87
-    static let kNotificationMoveAnimationSepingVelocity: CGFloat = 0.87
+    static let kNotificationMoveAnimationSpringDamping: CGFloat = 0.95
+    static let kNotificationMoveAnimationSepingVelocity: CGFloat = 0.95
     
     static func move(out: Bool, view: UIView, position: Position, duration: TimeInterval = kNotificationMoveAnimationDuration, delay: TimeInterval = kNotificationMoveAnimationDelay, onFinished: @escaping () -> Void) {
         let currY = view.frame.origin.y

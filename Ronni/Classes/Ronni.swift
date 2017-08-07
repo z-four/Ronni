@@ -70,8 +70,8 @@ public class Ronni {
             //add to the visible view controller
             visibleViewController.view.addSubview(view)
             visibleViewController.view.layoutIfNeeded()
-            
-            let isTranslucent = navController.navigationBar.isTranslucent
+  
+            let isTranslucent = navController.navigationBar.isTranslucent && visibleViewController.edgesForExtendedLayout.rawValue > 0
             var properY: CGFloat = 0
             if isTranslucent {
                 properY = navController.navigationBar.frame.maxY
