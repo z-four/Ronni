@@ -71,8 +71,15 @@ public class Ronni {
             visibleViewController.view.addSubview(view)
             visibleViewController.view.layoutIfNeeded()
             
+            let isTranslucent = navController.navigationBar.isTranslucent
+            var properY: CGFloat = 0
+            if isTranslucent {
+                properY = navController.navigationBar.frame.maxY
+                view.frame.origin.y = properY
+            }
+            
             if let containerView = (view as? NotificationView)?.containerView {
-                view.frame.origin.y = currPosition == .top ? -containerView.frame.size.height
+                view.frame.origin.y = currPosition == .top ? (properY - containerView.frame.size.height)
                     : visibleViewController.view.bounds.maxY
                 view.frame.size = containerView.frame.size
             } else {

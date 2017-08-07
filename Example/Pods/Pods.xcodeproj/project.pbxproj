@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0296A72D167884288360A5130C30DBC9 /* Pods_Ronni_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ronni_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0296A72D167884288360A5130C30DBC9 /* Pods_Ronni_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Ronni_Example.framework; path = "Pods-Ronni_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		076E0FCD964005EE829B911173F88890 /* Ronni.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Ronni.swift; sourceTree = "<group>"; };
 		0A65366FCD4865E0B01052D662B27E1B /* NotificationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		1229E4323DE9650FA2C985BBC94849F1 /* Ronni-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ronni-dummy.m"; sourceTree = "<group>"; };
@@ -51,17 +51,17 @@
 		53160F15CC8152686643202EBCFF7970 /* ToastNotificationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ToastNotificationView.xib; sourceTree = "<group>"; };
 		53ADA39DAAB185BDAE8425A5787C7544 /* Pods-Ronni_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ronni_Example.release.xcconfig"; sourceTree = "<group>"; };
 		553A428B20F8AD9A79E82E4443809950 /* SuccessNotificationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SuccessNotificationView.xib; sourceTree = "<group>"; };
-		55D1D4BB0C1D119FEFB2E2E288458588 /* Ronni.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Ronni.modulemap; sourceTree = "<group>"; };
+		55D1D4BB0C1D119FEFB2E2E288458588 /* Ronni.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Ronni.modulemap; sourceTree = "<group>"; };
 		6C01CE8245FFD2D492B7466F2BBFBE17 /* Pods-Ronni_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ronni_Example-umbrella.h"; sourceTree = "<group>"; };
 		6FE4DADAF96194140A5F67DA89A33854 /* Pods-Ronni_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ronni_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		740ECC840E6F68F1AFEAF3E3F7F0D3D8 /* InfoNotificationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = InfoNotificationView.xib; sourceTree = "<group>"; };
-		78863332719DEAB028E3A65396EA6DC9 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Utils/Animator.swift; sourceTree = "<group>"; };
+		78863332719DEAB028E3A65396EA6DC9 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		792E5529AC1700947400AA0624FADF78 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852ECAFFD87670DAAEFFB9B02775C0D4 /* ProgressNotificationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ProgressNotificationView.xib; sourceTree = "<group>"; };
-		8C231D518C4859324E6B72D1BAE3B02F /* Pods-Ronni_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Ronni_Example.modulemap"; sourceTree = "<group>"; };
+		8C231D518C4859324E6B72D1BAE3B02F /* Pods-Ronni_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Ronni_Example.modulemap"; sourceTree = "<group>"; };
 		91B778A1DD04C76489CA59FA7C2CF4B3 /* Ronni-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ronni-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9471DB351456960E860B339A14CFAC4F /* Ronni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ronni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9471DB351456960E860B339A14CFAC4F /* Ronni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Ronni.framework; path = Ronni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB78D8C827A5016A3A21B67BEB28F515 /* Pods-Ronni_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ronni_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C86A669B3D7D6599BAFA895407C03B6E /* Color+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Color+Utils.swift"; sourceTree = "<group>"; };
 		C97BAF7A64D6DCBDB908A50A630C4184 /* Pods-Ronni_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ronni_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +102,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		14C6A9BF03D12905610001E673FCBE64 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				78863332719DEAB028E3A65396EA6DC9 /* Animator.swift */,
+			);
+			name = Utils;
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		431E86B94A15BF89F744819380B6F34B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +124,7 @@
 			children = (
 				7C82F45A32AB52FDF9A21DE800E6E2B5 /* Classes */,
 			);
+			name = Ronni;
 			path = Ronni;
 			sourceTree = "<group>";
 		};
@@ -147,13 +157,14 @@
 		79CF2038D3DD0688210F748A02348D82 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E461256637138C74B798DCD56AE96C8D /* Icons.xcassets */,
 				FA752EB0B7C5C35C8BE35E560D312A26 /* ErrorNotificationView.xib */,
+				E461256637138C74B798DCD56AE96C8D /* Icons.xcassets */,
 				740ECC840E6F68F1AFEAF3E3F7F0D3D8 /* InfoNotificationView.xib */,
 				852ECAFFD87670DAAEFFB9B02775C0D4 /* ProgressNotificationView.xib */,
 				553A428B20F8AD9A79E82E4443809950 /* SuccessNotificationView.xib */,
 				53160F15CC8152686643202EBCFF7970 /* ToastNotificationView.xib */,
 			);
+			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -172,10 +183,11 @@
 			isa = PBXGroup;
 			children = (
 				076E0FCD964005EE829B911173F88890 /* Ronni.swift */,
-				78863332719DEAB028E3A65396EA6DC9 /* Animator.swift */,
 				B426A53581FB5004C8FFAE30341A542A /* Extensions */,
-				F5A7FAEF17CF9EC5A701471DF40C89F4 /* Views */,
+				14C6A9BF03D12905610001E673FCBE64 /* Utils */,
+				F5A7FAEF17CF9EC5A701471DF40C89F4 /* View */,
 			);
+			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -195,6 +207,7 @@
 			children = (
 				79CF2038D3DD0688210F748A02348D82 /* Resources */,
 			);
+			name = Ronni;
 			path = Ronni;
 			sourceTree = "<group>";
 		};
@@ -205,6 +218,7 @@
 				C86A669B3D7D6599BAFA895407C03B6E /* Color+Utils.swift */,
 				45870D96B27490ABF56F44EFEE9B2823 /* Ronni+Utils.swift */,
 			);
+			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -216,13 +230,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F5A7FAEF17CF9EC5A701471DF40C89F4 /* Views */ = {
+		F5A7FAEF17CF9EC5A701471DF40C89F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0A65366FCD4865E0B01052D662B27E1B /* NotificationView.swift */,
 				FF4EB52225065CA2F60ED729961EA987 /* ProgressView.swift */,
 			);
-			name = Views;
+			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
