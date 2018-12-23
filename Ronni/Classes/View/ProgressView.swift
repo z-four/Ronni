@@ -10,11 +10,11 @@ import Foundation
 
 @IBDesignable
 public class ProgressView: UIView {
-    private let kLineWidth: CGFloat = 2.0
+    private let lineWidth: CGFloat = 2.0
     
-    private let kAnimationDuration: CFTimeInterval = 0.9
-    private let kAnimationType = "transform.rotation"
-    private let kAnimationKey = "rotationAnimation"
+    private let animDuration: CFTimeInterval = 0.9
+    private let animType = "transform.rotation"
+    private let animKey = "rotationAnimation"
     
     public let progressLayer = CAShapeLayer()
     
@@ -40,10 +40,10 @@ public class ProgressView: UIView {
     
     private func getProgressLayer (centerPoint: CGPoint, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool = true, color: UIColor = UIColor.white) -> CAShapeLayer {
         
-        progressLayer.path = UIBezierPath(arcCenter: centerPoint, radius: centerPoint.x - kLineWidth, startAngle: startAngle, endAngle:endAngle, clockwise: clockwise).cgPath
+        progressLayer.path = UIBezierPath(arcCenter: centerPoint, radius: centerPoint.x - lineWidth, startAngle: startAngle, endAngle:endAngle, clockwise: clockwise).cgPath
         layer.backgroundColor = UIColor.clear.cgColor
         progressLayer.fillColor = nil
-        progressLayer.lineWidth = kLineWidth
+        progressLayer.lineWidth = lineWidth
         progressLayer.strokeStart = 0.0
         progressLayer.strokeEnd = 1.0
         progressLayer.strokeColor = color.cgColor
@@ -60,12 +60,12 @@ public class ProgressView: UIView {
     }
     
     public func start() {
-        let animation = CABasicAnimation(keyPath: kAnimationType)
+        let animation = CABasicAnimation(keyPath: animType)
         animation.byValue = 2 * Double.pi
         animation.repeatCount = .infinity
-        animation.duration = kAnimationDuration
+        animation.duration = animDuration
         animation.isRemovedOnCompletion = false
         
-        layer.add(animation, forKey: kAnimationKey)
+        layer.add(animation, forKey: animKey)
     }
 }
