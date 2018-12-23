@@ -11,59 +11,76 @@ import UIKit
 
 public class NotificationView: UIView {
     
-    @IBOutlet weak var progressView: ProgressView?
-    @IBOutlet var notificationViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var textLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet fileprivate weak var progressView: ProgressView?
     
-    @IBOutlet weak var button: UIButton! 
-       
+    @IBOutlet fileprivate weak var icon: UIImageView!
+    @IBOutlet fileprivate weak var iconHeightConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var iconLeftConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var buttonLeftConstraint: NSLayoutConstraint!
-    @IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var icon: UIImageView!
-    
-    @IBOutlet weak var iconHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var iconLeftConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var textContainerLeftConstraint: NSLayoutConstraint!
-    @IBOutlet weak var textContainerView: UIView!
-    @IBOutlet weak var containerView: UIView!
-    
-    @IBOutlet weak var textContainerRightConstraint: NSLayoutConstraint!
-  
-    @IBAction func buttonTapped(_ sender: Any) {
-        if let unwrappedButtonClick = didButtonClick {
-            unwrappedButtonClick()
-        }
-    }
+    @IBOutlet fileprivate weak var descriptionLabel: UILabel!
+    @IBOutlet fileprivate weak var textLabel: UILabel!
+    @IBOutlet fileprivate weak var textContainerView: UIView!
+    @IBOutlet fileprivate weak var containerView: UIView!
+    @IBOutlet fileprivate weak var button: UIButton!
     
     var style: Style = .success
-    var didButtonClick: (() -> Void)?
+    var didButtonPressed: (() -> Void)?
     
-    class func viewFromNib(name: String, bundle: Bundle? = nil, filesOwner: AnyObject = NSNull.init()) throws -> NotificationView {
-        let resolvedBundle: Bundle
-        if let bundle = bundle { resolvedBundle = bundle }
+    class func viewFromNib(name: String, bundle: Bundle? = nil) throws -> NotificationView {
+        let currBundle: Bundle
+        if let bundle = bundle { currBundle = bundle }
         else {
-            if Bundle.main.path(forResource: name, ofType: "nib") != nil {
-                resolvedBundle = Bundle.main
-            } else {
-                resolvedBundle = Bundle.libraryBundle()
-            }
+            currBundle = Bundle.main.path(forResource: name, ofType: "nib") != nil ? Bundle.main : Bundle(for: Ronni.self)
         }
         
-        let arrayOfViews = resolvedBundle.loadNibNamed(name, owner: filesOwner, options: nil) ?? []
-        
+        let arrayOfViews = currBundle.loadNibNamed(name, owner: NSNull(), options: nil) ?? []
         if arrayOfViews.count > 0 {
             let notficationView = arrayOfViews[0] as! NotificationView
             return notficationView
         }
-        
         return NotificationView()
     }
+}
+
+// MARK: - Actions
+extension NotificationView {
+    @IBAction func buttonTapped(_ sender: Any) { didButtonPressed?() }
+}
+
+// MARK: - View creation
+extension NotificationView {
+
+    class func create(navController: UINavigationController, style: Style, message: Message?,
+                         didButtonPressed: (() -> Void)? = nil) -> NotificationView? {
+        do {
+            let view = try NotificationView.viewFromNib(name: style.rawValue)
+            view.frame.size.width = navController.navigationBar.frame.width
+            view.frame.size.height = view.containerView.frame.size.height
+            view.didButtonPressed = didButtonPressed
+            
+            if let progress = view.progressView { progress.start() }
+            if let unwrappedMessage = message {
+                view.configure(message: unwrappedMessage, style: style)
+            }
+            return view
+            
+        } catch { return nil }
+    }
     
-    func configure (message: Message, style: Style) {
+    class func empty(text: String) -> Message {
+        let message = Message()
+        message.isIconEnable = false
+        message.title = text
+        return message
+    }
+}
+
+// MARK: - Configure
+extension NotificationView {
+    
+    func rootView() -> UIView { return containerView }
+    
+    fileprivate func configure(message: Message, style: Style) {
         self.style = style
         
         if style == .toast {
@@ -106,7 +123,6 @@ public class NotificationView: UIView {
         }
         
         if !message.isIconEnable {
-            
             if !message.isButtonEnable {
                 textLabel.textAlignment = .center
                 descriptionLabel.textAlignment = .center
@@ -136,17 +152,22 @@ public class NotificationView: UIView {
             }
             
             unwrappedButton.isHidden = !message.isButtonEnable
-        
+            
             if !message.isButtonEnable {
                 unwrappedButton.removeFromSuperview()
-            
+                
                 let rightConstant: CGFloat = 8
-                let trailingConstraint = NSLayoutConstraint(item: textContainerView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: -rightConstant)
-            
+                let trailingConstraint = NSLayoutConstraint(item: textContainerView,
+                                                            attribute: .trailing,
+                                                            relatedBy: .equal,
+                                                            toItem: containerView,
+                                                            attribute: .trailing,
+                                                            multiplier: 1,
+                                                            constant: -rightConstant)
                 containerView.addConstraint(trailingConstraint)
             }
         }
-
+        
         if let unwrappedBackgroundColor = message.backgroundColor {
             containerView.backgroundColor = unwrappedBackgroundColor
             self.backgroundColor = UIColor.clear

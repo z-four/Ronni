@@ -14,6 +14,11 @@ public enum Style: String {
     case toast   = "ToastNotificationView"
 }
 
+public enum Animation {
+    case `in`
+    case out
+}
+
 public enum Position {
     case top
     case bottom
@@ -51,49 +56,4 @@ public class Message {
     
     var isButtonEnable = false
     var isIconEnable = true
-}
-
-extension Ronni {
-
-    func getLastNotification (navController: UINavigationController) -> UIView? {
-        if let visibleViewController = navController.visibleViewController {
-            let subviews = visibleViewController.view.subviews
-            if let index = subviews.index(where: { $0.tag == kNotificationViewTag }) {
-                return subviews[index]
-            }
-        }
-        return nil
-    }
-    
-    func getDurationInterval (duration: Duration) -> TimeInterval {
-        switch (duration) {
-            case .automatic: return 2.0
-            case .seconds(sec: let interval): return interval
-            default: return -1
-        }
-    }
-    
-    func getNotificatonView (navController: UINavigationController, style: Style, message: Message?, didButtonClick: (() -> Void)? = nil) -> NotificationView? {
-        do {
-            let view = try NotificationView.viewFromNib(name: style.rawValue)
-            view.frame.size.width = navController.navigationBar.frame.width
-            view.frame.size.height =  view.containerView.frame.size.height
-            view.didButtonClick = didButtonClick
-            
-            if let progress = view.progressView { progress.start() }
-            if let unwrappedMessage = message {
-                view.configure(message: unwrappedMessage, style: style)
-            }
-            return view
-                
-        } catch { return nil }
-    }
-    
-    func getEmptyMessage (text: String) -> Message {
-        let message = Message()
-        message.isIconEnable = false
-        message.title = text
-        
-        return message
-    }
 }

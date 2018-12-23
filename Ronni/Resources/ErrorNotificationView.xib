@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HCP-Zg-c4w" userLabel="Container View">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="OZ5-dq-ruW">
-                            <rect key="frame" x="10" y="12" width="28" height="28"/>
+                            <rect key="frame" x="10" y="11.5" width="28" height="28"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="28" id="FCe-xB-Fbp"/>
@@ -27,7 +27,7 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o72-iz-g9U">
-                            <rect key="frame" x="319" y="11" width="36" height="30"/>
+                            <rect key="frame" x="319" y="10.5" width="36" height="30"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="3jP-9k-RBa"/>
@@ -48,17 +48,17 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Puk-5O-WnJ" userLabel="Text Container">
-                            <rect key="frame" x="48" y="8" width="74" height="35.5"/>
+                            <rect key="frame" x="48" y="8" width="73.5" height="35.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikF-ka-l37">
-                                    <rect key="frame" x="0.0" y="0.0" width="74" height="18"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="73.5" height="18"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEl-oQ-S0t">
-                                    <rect key="frame" x="0.0" y="18" width="74.5" height="17"/>
+                                    <rect key="frame" x="0.0" y="18" width="74" height="17"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,15 +100,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="button" destination="o72-iz-g9U" id="Ca0-62-a8R"/>
-                <outlet property="buttonHeightConstraint" destination="CYx-0P-DBH" id="6rt-Ss-hwi"/>
-                <outlet property="buttonLeftConstraint" destination="Bna-yI-9aV" id="Cg3-sS-GCm"/>
                 <outlet property="containerView" destination="HCP-Zg-c4w" id="Nnv-KU-awf"/>
                 <outlet property="descriptionLabel" destination="OEl-oQ-S0t" id="fGz-Jf-1x4"/>
                 <outlet property="icon" destination="OZ5-dq-ruW" id="czl-VQ-hte"/>
                 <outlet property="iconHeightConstraint" destination="FCe-xB-Fbp" id="o7Z-UW-xNX"/>
                 <outlet property="iconLeftConstraint" destination="Yo2-C4-yUo" id="zG0-tj-YqD"/>
-                <outlet property="textContainerLeftConstraint" destination="Nq1-Hu-0T4" id="e2w-Kg-Ayt"/>
-                <outlet property="textContainerRightConstraint" destination="nvf-qp-cwg" id="AW4-JA-8Cq"/>
                 <outlet property="textContainerView" destination="Puk-5O-WnJ" id="Djn-pc-QwS"/>
                 <outlet property="textLabel" destination="ikF-ka-l37" id="dL8-7M-L1v"/>
             </connections>

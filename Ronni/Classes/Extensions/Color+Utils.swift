@@ -27,12 +27,4 @@ extension UIColor {
             blue: CGFloat(b) / 0xff, alpha: 1
         )
     }
-    
-    class func colorGreen () -> UIColor {
-        return UIColor(hex: "ff99cc00")
-    }
-    
-    class func colorRed () -> UIColor {
-        return UIColor(hex: "FC413D")
-    }
 }

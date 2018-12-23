@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -48,17 +48,17 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Cr-BM-SK8" userLabel="Text Container">
-                            <rect key="frame" x="48" y="8" width="74" height="35.5"/>
+                            <rect key="frame" x="48" y="8" width="73.5" height="35.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fau-Cn-tyw">
-                                    <rect key="frame" x="0.0" y="0.0" width="74" height="18"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="73.5" height="18"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJF-Q0-GYc">
-                                    <rect key="frame" x="0.0" y="18" width="74.5" height="17"/>
+                                    <rect key="frame" x="0.0" y="18" width="74" height="17"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,15 +100,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="button" destination="u0k-Vh-qNn" id="fge-cm-3LG"/>
-                <outlet property="buttonHeightConstraint" destination="7N6-11-DDo" id="h1b-mO-45F"/>
-                <outlet property="buttonLeftConstraint" destination="cDj-bg-YO5" id="geN-WH-VK9"/>
                 <outlet property="containerView" destination="Clc-sU-0ML" id="UYo-4Y-rcH"/>
                 <outlet property="descriptionLabel" destination="eJF-Q0-GYc" id="uQ0-ZL-Wp6"/>
                 <outlet property="icon" destination="Zw8-N2-kd3" id="Ego-Y0-GCq"/>
                 <outlet property="iconHeightConstraint" destination="LCk-Tz-0Nd" id="8il-Hy-nWq"/>
                 <outlet property="iconLeftConstraint" destination="Ynv-28-RXR" id="mo6-Pa-Xo2"/>
-                <outlet property="textContainerLeftConstraint" destination="TEN-D7-ilZ" id="9Au-0g-dPR"/>
-                <outlet property="textContainerRightConstraint" destination="BkW-md-pPJ" id="nzH-VK-yAJ"/>
                 <outlet property="textContainerView" destination="1Cr-BM-SK8" id="9zU-2X-5P9"/>
                 <outlet property="textLabel" destination="fau-Cn-tyw" id="KNt-aM-rND"/>
             </connections>
