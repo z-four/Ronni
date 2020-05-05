@@ -1,5 +1,5 @@
 //
-//  SuccessNotificationView.swift
+//  NotificationView.swift
 //  Pods
 //
 //  Created by Z4
@@ -49,8 +49,10 @@ extension NotificationView {
 // MARK: - View creation
 extension NotificationView {
 
-    class func create(navController: UINavigationController, style: Style, message: Message?,
-                         didButtonPressed: (() -> Void)? = nil) -> NotificationView? {
+    class func create(navController: UINavigationController,
+                      style: Style,
+                      message: Message?,
+                      didButtonPressed: (() -> Void)? = nil) -> NotificationView? {
         do {
             let view = try NotificationView.viewFromNib(name: style.rawValue)
             view.frame.size.width = navController.navigationBar.frame.width

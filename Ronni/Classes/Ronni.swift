@@ -221,6 +221,7 @@ extension Ronni {
         // Gets current y position
         let currY = view.frame.origin.y
         
+        
         // Gets current view height
         let currHeight = view.frame.size.height
         
@@ -234,9 +235,10 @@ extension Ronni {
                        animations: {
                         
             // Calculate proper y position and animate view
-            var y = position == .bottom ? (currY + currHeight) : (currY - currHeight)
+            let bottomInset = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
+            var y = position == .bottom ? (currY + currHeight + bottomInset) : (currY - currHeight)
             if anim != .out {
-                y = position == .bottom ? (currY - currHeight) : (currY + currHeight)
+                y = position == .bottom ? (currY - currHeight - bottomInset) : (currY + currHeight)
             }
             view.frame.origin.y = y
             view.layoutIfNeeded()
