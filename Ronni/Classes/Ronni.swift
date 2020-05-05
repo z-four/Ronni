@@ -3,6 +3,7 @@
 //  Pods
 //
 //  Created by Z4
+//  Copyright (c) 2017 Z4. All rights reserved.
 //
 
 import Foundation
@@ -37,8 +38,15 @@ public final class Ronni {
         func swap() { current = new }
     }
     
+    /// Sets up the view and attach to visible UIViewController
+    ///
+    /// - Parameters:
+    ///     - navController: The current navigation controller
+    ///     - view: The view to be shown as message
     private func setup(_ navController: UINavigationController,
                        view: UIView) {
+        
+        // Get current visible UIViewConroller
         if let visibleVC = navController.visibleViewController {
             view.isHidden = true
             view.tag = viewTag
@@ -67,6 +75,11 @@ public final class Ronni {
         }
     }
     
+    /// Returns message view that were attached to this UIViewController
+    ///
+    /// - Parameters:
+    ///     - navController: The current navigation controller
+    /// - Returns: The message view inside visible UIViewController
     private func lastNotification(navController: UINavigationController) -> UIView? {
         if let visibleViewController = navController.visibleViewController {
             let subviews = visibleViewController.view.subviews
@@ -77,6 +90,10 @@ public final class Ronni {
         return nil
     }
     
+    /// Sets up the view and attach to visible UIViewController
+    ///
+    /// - Parameters:
+    ///     - event: Event type that user should be notified of
     private func notify(event: Event) {
         Ronni.events.forEach { $0(event) }
     }
@@ -85,18 +102,31 @@ public final class Ronni {
 // MARK: - Show/hide
 extension Ronni {
     
+    /// Shows the message with specified style and content
+    ///
+    /// - Parameters:
+    ///     - navController: The current navigation controller
+    ///     - view: The view to be shown as message
+    ///     - style: The view style
+    ///     - message: The view content
     private func show(_ navController: UINavigationController,
-                          view: UIView?,
-                          style: Style,
-                          message: Message?) {
+                      view: UIView?,
+                      style: Style,
+                      message: Message?) {
+        
+        // Find the view inside visible UIViewController
         if let lastView = lastNotification(navController: navController) {
             hide(navController, view: lastView, complete: {
                 self.show(navController, view: view, style: style, message: message)
             })
         } else {
+            // Toggle animation state
             animAttrs.toggle()
+            
+            // Swap positions
             positionAttrs.swap()
             
+            // If passed view is null then create and sryle the new one
             if let view = view == nil ? NotificationView.create(
                 navController: navController,
                 style: style,
@@ -121,14 +151,32 @@ extension Ronni {
         }
     }
     
+    /// Hides the message with specified params
+    ///
+    /// - Parameters:
+    ///     - navController: The current navigation controller
+    ///     - view: The view to be shown as message
+    ///     - duration: Animation duration
+    ///     - delay: Animation delay
+     ///    - complete: Complete closure
     private func hide(_ navController: UINavigationController,
                       view: UIView,
                       duration: TimeInterval = AnimAttrs.duration,
                       delay: TimeInterval = 0.0,
                       complete: @escaping () -> Void = {}) {
+        
+        // Notifies view gonna be hidden
         self.notify(event: .willHide)
         
-        move(view: view, position: positionAttrs.current, anim: .out, duration: duration, delay: delay, onFinished: {
+        // Starts the animation
+        move(view: view,
+             position: positionAttrs.current,
+             anim: .out,
+             duration: duration,
+             delay: delay,
+             onFinished: {
+                
+            // Removes view from the superview
             view.removeFromSuperview()
             
             // Reset interaval and notify
@@ -142,6 +190,10 @@ extension Ronni {
 // MARK: - Animation
 extension Ronni {
     
+    /// Returns correcnt duration interval
+    ///
+    /// - Parameters:
+    ///     - duration: Duration type
     private func durationInterval(duration: Duration) -> TimeInterval {
         switch (duration) {
             case .automatic: return 2.0
@@ -150,10 +202,26 @@ extension Ronni {
         }
     }
 
-    private func move(view: UIView, position: Position, anim: Animation = .in,
-                          duration: TimeInterval, delay: TimeInterval,
-                          onFinished: @escaping () -> Void) {
+   /// Hides the message with specified params
+   ///
+   /// - Parameters:
+   ///     - view: The view represents as a message
+   ///     - position: Position in the screen
+   ///     - anim: Animation direction
+   ///     - duration: Animation duration
+   ///     - delay: Animation delay
+   ///     - complete: Complete closure
+    private func move(view: UIView,
+                      position: Position,
+                      anim: Animation = .in,
+                      duration: TimeInterval,
+                      delay: TimeInterval,
+                      onFinished: @escaping () -> Void) {
+        
+        // Gets current y position
         let currY = view.frame.origin.y
+        
+        // Gets current view height
         let currHeight = view.frame.size.height
         
         if anim != .out { view.isHidden = false }
@@ -179,6 +247,15 @@ extension Ronni {
 
 extension Ronni {
 
+    /// Shows message with specified params
+    ///
+    /// - Parameters:
+    ///     - to: The current UINavigationController
+    ///     - message: Message to be shown
+    ///     - style: Message style
+    ///     - duration: Duration type
+    ///     - position: Message position
+    ///     - animType: Duration interval
     public static func show(to: UINavigationController,
                             message: Message,
                             style: Style,
@@ -192,6 +269,14 @@ extension Ronni {
         instance.show(to, view: nil, style: style, message: message)
     }
     
+    /// Shows message with specified params
+    ///
+    /// - Parameters:
+    ///     - to: The current UINavigationController
+    ///     - message: Message to be shown
+    ///     - duration: Duration type
+    ///     - position: Message position
+    ///     - animType: Duration interval
     public static func show(to: UINavigationController,
                             message: Message,
                             duration: Duration = .automatic,
@@ -204,6 +289,14 @@ extension Ronni {
         instance.show(to, view: nil, style: .success, message: message)
     }
     
+    /// Shows message with specified params
+    ///
+    /// - Parameters:
+    ///     - to: The current UINavigationController
+    ///     - view: View to be shown
+    ///     - duration: Duration type
+    ///     - position: Message position
+    ///     - animType: Duration interval
     public static func show(to: UINavigationController,
                             view: UIView,
                             duration: Duration = .automatic,
@@ -216,8 +309,18 @@ extension Ronni {
         instance.show(to, view: view, style: .success, message: nil)
     }
     
+    /// Shows message with specified params
+    ///
+    /// - Parameters:
+    ///     - to: The current UINavigationController
+    ///     - text: Message text
+    ///     - style: Message style
+    ///     - duration: Duration type
+    ///     - position: Message position
+    ///     - animType: Duration interval
     public static func show(to: UINavigationController,
-                            text: String, style: Style,
+                            text: String,
+                            style: Style,
                             duration: Duration = .automatic,
                             position: Position = .top,
                             animTime: TimeInterval = AnimAttrs.duration) {
@@ -229,6 +332,16 @@ extension Ronni {
         instance.show(to, view: nil, style: style, message: message)
     }
     
+    /// Shows message with specified params
+    ///
+    /// - Parameters:
+    ///     - to: The current UINavigationController
+    ///     - text: Message text
+    ///     - style: Message style
+    ///     - backgroundColor: Message backgound color
+    ///     - duration: Duration type
+    ///     - position: Message position
+    ///     - animType: Duration interval
     public static func show(to: UINavigationController,
                             text: String,
                             style: Style,
@@ -245,6 +358,11 @@ extension Ronni {
         instance.show(to, view: nil, style: style, message: message)
     }
     
+    /// Removes message from the screen
+    ///
+    /// - Parameters:
+    ///     - from: The current UINavigationController
+    ///     - animType: Duration interval
     public static func hide(from: UINavigationController,
                             animTime: TimeInterval = AnimAttrs.duration) {
         
@@ -254,6 +372,11 @@ extension Ronni {
         }
     }
 
+    /// Checks if message has shown
+    ///
+    /// - Parameters:
+    ///     - at: The current UINavigationController
+    /// - Returns: Boolean that says is message has shown or not
     public static func isShown(at: UINavigationController) -> Bool {
         return instance.lastNotification(navController: at) != nil
     }

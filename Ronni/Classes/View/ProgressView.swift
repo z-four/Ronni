@@ -2,9 +2,8 @@
 //  ProgressView.swift
 //  Pods
 //
-//  Created by Administrator on 08.07.17.
-//
-//
+//  Created by Z4
+//  Copyright (c) 2017 Z4. All rights reserved.
 
 import Foundation
 

@@ -1,8 +1,8 @@
 //
 //  LibraryUtils.swift
 //
-//  Created by Z4.
-//
+//  Created by Z4
+//  Copyright (c) 2017 Z4. All rights reserved.
 
 import Foundation
 

@@ -2,9 +2,8 @@
 //  SuccessNotificationView.swift
 //  Pods
 //
-//  Created by Administrator on 26.06.17.
-//
-//
+//  Created by Z4
+//  Copyright (c) 2017 Z4. All rights reserved.
 
 import Foundation
 import UIKit
