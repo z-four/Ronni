@@ -32,7 +32,7 @@ let position = .top //or bottom
 
 Ronni.show(to: navController, text: text, style: style, position: position)
 
-//set up background color
+// Show with custom background color
 Ronni.show(to: navController, text: text, style: style, backgroundColor: UIColor.blue)
 
 ```
@@ -49,10 +49,10 @@ message.buttonText = "Hide"
 
 Ronni.show(to: navController, message: message)
 
-//disable the default auto-hiding behavior (duration = .forever), slide up from the bottom (position = .bottom)
+// Disable the auto-hiding behavior and show message from bottom
 Ronni.show(to: navController, message: message, style: .success, duration: .forever, position: .bottom)
 
-//custom animation duration
+// Show with automatic duration
  Ronni.show(to: navController, message: message, style: .success, duration: .automatic, position: .top, animTime: 0.0)
 ```
 
@@ -68,10 +68,10 @@ Ronni.show(to: navController, message: message, style: .success, duration: .fore
 ```swift
  Ronni.events.append() { event in
             switch(event) {
-                case .willShow: print("will show"); break
-                case .willHide: print("will hide"); break
-                case .didShow: print("did show"); break
-                case .didHide: print("did hide"); break
+                case .willShow: print("Will show"); break
+                case .willHide: print("Will hide"); break
+                case .didShow: print("Did show"); break
+                case .didHide: print("Did hide"); break
                 case .didButtonClick:
                     if let navController = self.navigationController {
                         Ronni.hide(from: navController)
@@ -98,7 +98,7 @@ pod 'Ronni'
 
 This project is licensed under the MIT license.
 
-Copyright (c) 2015 Dmitriy Zhyzhko
+Copyright (c) 2017 Dmitriy Zhyzhko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
