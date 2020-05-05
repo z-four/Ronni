@@ -11,9 +11,9 @@ public typealias EventListener = (Event) -> Void
 private let instance = Ronni()
 
 public final class Ronni {
-    fileprivate let viewTag = Int.max
-    fileprivate let animAttrs = AnimAttrs()
-    fileprivate let positionAttrs = PositionAttrs()
+    private let viewTag = Int.max
+    private let animAttrs = AnimAttrs()
+    private let positionAttrs = PositionAttrs()
     
     public static var events: [EventListener] = []
     
@@ -37,16 +37,17 @@ public final class Ronni {
         func swap() { current = new }
     }
     
-    private func setup(_ navController: UINavigationController, view: UIView) {
+    private func setup(_ navController: UINavigationController,
+                       view: UIView) {
         if let visibleVC = navController.visibleViewController {
             view.isHidden = true
             view.tag = viewTag
         
-            //add to the visible view controller
+            // Add to the visible UIViewController
             visibleVC.view.addSubview(view)
             visibleVC.view.layoutIfNeeded()
   
-            //check of navigation bar is transculent to determinate proper y position
+            // Check if navigation bar is transculent to determinate correct y position
             let isTranslucent = navController.navigationBar.isTranslucent && visibleVC.edgesForExtendedLayout.rawValue > 0
             var properY: CGFloat = 0
             if isTranslucent {
@@ -54,7 +55,7 @@ public final class Ronni {
                 view.frame.origin.y = properY
             }
             
-            //setup view size and y positon
+            // Sets up view size and y positon
             if let containerView = (view as? NotificationView)?.rootView() {
                 view.frame.origin.y = positionAttrs.current == .top ? (properY - containerView.frame.size.height)
                     : visibleVC.view.bounds.maxY
@@ -69,14 +70,14 @@ public final class Ronni {
     private func lastNotification(navController: UINavigationController) -> UIView? {
         if let visibleViewController = navController.visibleViewController {
             let subviews = visibleViewController.view.subviews
-            if let index = subviews.index(where: { $0.tag == viewTag }) {
+            if let index = subviews.firstIndex(where: { $0.tag == viewTag }) {
                 return subviews[index]
             }
         }
         return nil
     }
     
-    fileprivate func notify(event: Event) {
+    private func notify(event: Event) {
         Ronni.events.forEach { $0(event) }
     }
 }
@@ -84,7 +85,10 @@ public final class Ronni {
 // MARK: - Show/hide
 extension Ronni {
     
-    fileprivate func show(_ navController: UINavigationController, view: UIView?, style: Style, message: Message?) {
+    private func show(_ navController: UINavigationController,
+                          view: UIView?,
+                          style: Style,
+                          message: Message?) {
         if let lastView = lastNotification(navController: navController) {
             hide(navController, view: lastView, complete: {
                 self.show(navController, view: view, style: style, message: message)
@@ -93,12 +97,13 @@ extension Ronni {
             animAttrs.toggle()
             positionAttrs.swap()
             
-            if let view = view == nil ? NotificationView.create(navController: navController,
+            if let view = view == nil ? NotificationView.create(
+                navController: navController,
                 style: style,
                 message: message,
                 didButtonPressed:  { self.notify(event: .didButtonClick) }) : view! {
                 
-                //setup view and animate
+                // Sets up view and animate
                 setup(navController, view: view)
                 move(view: view,
                      position:  positionAttrs.current,
@@ -108,7 +113,7 @@ extension Ronni {
                         self.animAttrs.toggle()
                         self.animAttrs.interval = AnimAttrs.duration
                         
-                        //hide notification after specific interval
+                        // Hide notification after specific interval
                         let interval = self.durationInterval(duration: self.animAttrs.waiting)
                         if interval != -1 { self.hide(navController, view: view, delay: interval) }
                 })
@@ -116,15 +121,17 @@ extension Ronni {
         }
     }
     
-    fileprivate func hide(_ navController: UINavigationController, view: UIView,
-              duration: TimeInterval = AnimAttrs.duration, delay: TimeInterval = 0.0,
-              complete: @escaping () -> Void = {}) {
+    private func hide(_ navController: UINavigationController,
+                      view: UIView,
+                      duration: TimeInterval = AnimAttrs.duration,
+                      delay: TimeInterval = 0.0,
+                      complete: @escaping () -> Void = {}) {
         self.notify(event: .willHide)
         
         move(view: view, position: positionAttrs.current, anim: .out, duration: duration, delay: delay, onFinished: {
             view.removeFromSuperview()
             
-            //reset interaval and notify
+            // Reset interaval and notify
             self.animAttrs.interval = AnimAttrs.duration
             self.notify(event: .didHide)
             complete()
@@ -135,7 +142,7 @@ extension Ronni {
 // MARK: - Animation
 extension Ronni {
     
-    fileprivate func durationInterval(duration: Duration) -> TimeInterval {
+    private func durationInterval(duration: Duration) -> TimeInterval {
         switch (duration) {
             case .automatic: return 2.0
             case .seconds(sec: let interval): return interval
@@ -143,7 +150,7 @@ extension Ronni {
         }
     }
 
-    fileprivate func move(view: UIView, position: Position, anim: Animation = .in,
+    private func move(view: UIView, position: Position, anim: Animation = .in,
                           duration: TimeInterval, delay: TimeInterval,
                           onFinished: @escaping () -> Void) {
         let currY = view.frame.origin.y
@@ -158,7 +165,7 @@ extension Ronni {
                        options: [.beginFromCurrentState, .curveLinear, .allowUserInteraction],
                        animations: {
                         
-            //detect proper y to animate
+            // Calculate proper y position and animate view
             var y = position == .bottom ? (currY + currHeight) : (currY - currHeight)
             if anim != .out {
                 y = position == .bottom ? (currY - currHeight) : (currY + currHeight)
@@ -172,32 +179,49 @@ extension Ronni {
 
 extension Ronni {
 
-    public static func show(to: UINavigationController, message: Message, style: Style, duration: Duration = .automatic,
-                            position: Position = .top, animTime: TimeInterval = AnimAttrs.duration) {
+    public static func show(to: UINavigationController,
+                            message: Message,
+                            style: Style,
+                            duration: Duration = .automatic,
+                            position: Position = .top,
+                            animTime: TimeInterval = AnimAttrs.duration) {
+        
         instance.animAttrs.interval = animTime
         instance.positionAttrs.new = position
         instance.animAttrs.waiting = duration
         instance.show(to, view: nil, style: style, message: message)
     }
     
-    public static func show(to: UINavigationController, message: Message, duration: Duration = .automatic,
-                            position: Position = .top, animTime: TimeInterval = AnimAttrs.duration) {
+    public static func show(to: UINavigationController,
+                            message: Message,
+                            duration: Duration = .automatic,
+                            position: Position = .top,
+                            animTime: TimeInterval = AnimAttrs.duration) {
+        
         instance.animAttrs.interval = animTime
         instance.positionAttrs.new  = position
         instance.animAttrs.waiting = duration
         instance.show(to, view: nil, style: .success, message: message)
     }
     
-    public static func show(to: UINavigationController, view: UIView, duration: Duration = .automatic,
-                            position: Position = .top, animTime: TimeInterval = AnimAttrs.duration) {
+    public static func show(to: UINavigationController,
+                            view: UIView,
+                            duration: Duration = .automatic,
+                            position: Position = .top,
+                            animTime: TimeInterval = AnimAttrs.duration) {
+        
         instance.animAttrs.interval = animTime
         instance.positionAttrs.new = position
         instance.animAttrs.waiting = duration
         instance.show(to, view: view, style: .success, message: nil)
     }
     
-    public static func show(to: UINavigationController, text: String, style: Style, duration: Duration = .automatic,
-                            position: Position = .top, animTime: TimeInterval = AnimAttrs.duration) {
+    public static func show(to: UINavigationController,
+                            text: String, style: Style,
+                            duration: Duration = .automatic,
+                            position: Position = .top,
+                            animTime: TimeInterval = AnimAttrs.duration) {
+        
         let message = NotificationView.empty(text: text)
         instance.animAttrs.interval = animTime
         instance.positionAttrs.new  = position
@@ -205,8 +229,14 @@ extension Ronni {
         instance.show(to, view: nil, style: style, message: message)
     }
     
-    public static func show(to: UINavigationController, text: String, style: Style, backgroundColor: UIColor, duration: Duration = .automatic,
-                            position: Position = .top, animTime: TimeInterval = AnimAttrs.duration) {
+    public static func show(to: UINavigationController,
+                            text: String,
+                            style: Style,
+                            backgroundColor: UIColor,
+                            duration: Duration = .automatic,
+                            position: Position = .top,
+                            animTime: TimeInterval = AnimAttrs.duration) {
+        
         let message = NotificationView.empty(text: text)
         message.backgroundColor = backgroundColor
         instance.animAttrs.interval = animTime
@@ -215,7 +245,9 @@ extension Ronni {
         instance.show(to, view: nil, style: style, message: message)
     }
     
-    public static func hide(from: UINavigationController, animTime: TimeInterval = AnimAttrs.duration) {
+    public static func hide(from: UINavigationController,
+                            animTime: TimeInterval = AnimAttrs.duration) {
+        
         if let lastNotification = instance.lastNotification(navController: from) {
             instance.animAttrs.interval = animTime
             instance.hide(from, view: lastNotification)

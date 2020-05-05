@@ -11,17 +11,17 @@ import UIKit
 
 public class NotificationView: UIView {
     
-    @IBOutlet fileprivate weak var progressView: ProgressView?
+    @IBOutlet private weak var progressView: ProgressView?
     
-    @IBOutlet fileprivate weak var icon: UIImageView!
-    @IBOutlet fileprivate weak var iconHeightConstraint: NSLayoutConstraint!
-    @IBOutlet fileprivate weak var iconLeftConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var icon: UIImageView!
+    @IBOutlet private weak var iconHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var iconLeftConstraint: NSLayoutConstraint!
     
-    @IBOutlet fileprivate weak var descriptionLabel: UILabel!
-    @IBOutlet fileprivate weak var textLabel: UILabel!
-    @IBOutlet fileprivate weak var textContainerView: UIView!
-    @IBOutlet fileprivate weak var containerView: UIView!
-    @IBOutlet fileprivate weak var button: UIButton!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var textLabel: UILabel!
+    @IBOutlet private weak var textContainerView: UIView!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var button: UIButton!
     
     var style: Style = .success
     var didButtonPressed: (() -> Void)?
@@ -80,7 +80,7 @@ extension NotificationView {
     
     func rootView() -> UIView { return containerView }
     
-    fileprivate func configure(message: Message, style: Style) {
+    private func configure(message: Message, style: Style) {
         self.style = style
         
         if style == .toast {
@@ -157,7 +157,7 @@ extension NotificationView {
                 unwrappedButton.removeFromSuperview()
                 
                 let rightConstant: CGFloat = 8
-                let trailingConstraint = NSLayoutConstraint(item: textContainerView,
+                let trailingConstraint = NSLayoutConstraint(item: textContainerView!,
                                                             attribute: .trailing,
                                                             relatedBy: .equal,
                                                             toItem: containerView,

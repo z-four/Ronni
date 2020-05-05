@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  PROJECT
+//  Ronni
 //
-//  Created by PROJECT_OWNER on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR PROJECT_OWNER. All rights reserved.
+//  Created by Z4
+//  Copyright (c) 2017 Z4. All rights reserved.
 //
 
 import UIKit
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 }
 
-//MARK: - Click events
+//MARK: - Action events
 extension ViewController {
     
     @IBAction func pressedOnButton(_ button: UIButton) {
@@ -70,6 +70,7 @@ extension ViewController {
                 break
                 
             default: break
+                
             }
         }
     }
