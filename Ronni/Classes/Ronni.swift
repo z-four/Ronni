@@ -17,8 +17,8 @@ public final class Ronni {
     
     public static var events: [EventListener] = []
     
-    fileprivate final class AnimAttrs {
-        static let duration = 0.52
+    public final class AnimAttrs {
+        public static let duration = 0.52
         static let delay = 0.1
         static let springDamping: CGFloat = 0.95
         static let springVelocity: CGFloat = 0.95
@@ -30,14 +30,14 @@ public final class Ronni {
         func toggle() { isFinished = !isFinished }
     }
     
-    fileprivate final class PositionAttrs {
+    public final class PositionAttrs {
         var current: Position = .top
         var new: Position = .top
         
         func swap() { current = new }
     }
     
-    fileprivate func setup(_ navController: UINavigationController, view: UIView) {
+    private func setup(_ navController: UINavigationController, view: UIView) {
         if let visibleVC = navController.visibleViewController {
             view.isHidden = true
             view.tag = viewTag
@@ -66,7 +66,7 @@ public final class Ronni {
         }
     }
     
-    fileprivate func lastNotification(navController: UINavigationController) -> UIView? {
+    private func lastNotification(navController: UINavigationController) -> UIView? {
         if let visibleViewController = navController.visibleViewController {
             let subviews = visibleViewController.view.subviews
             if let index = subviews.index(where: { $0.tag == viewTag }) {

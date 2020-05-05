@@ -87,7 +87,7 @@ extension ViewController  {
 
 //MARK: - UISegmentControll events
 extension ViewController  {
-    func segmentSwitched (_ sender: UISegmentedControl) {
+    @objc func segmentSwitched (_ sender: UISegmentedControl) {
         notificationPosition = sender.selectedSegmentIndex == 0 ? .top : .bottom
     }
 }
