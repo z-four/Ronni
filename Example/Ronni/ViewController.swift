@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initUI()
-        initListeners()
+        setUpView()
+        registerEvents()
     }
 }
 
@@ -96,7 +96,7 @@ extension ViewController  {
 //MARK: - Other methods
 extension ViewController {
     
-    func initUI () {
+    func setUpView() {
         let segment: UISegmentedControl = UISegmentedControl(items: ["Top", "Bottom"])
         segment.sizeToFit()
         segment.tintColor = UIColor(hex: "5FB4A0")
@@ -108,11 +108,11 @@ extension ViewController {
         navigationItem.rightBarButtonItem?.action = #selector(pressedOnHide(_:))
     }
     
-    func initListeners () {
+    func registerEvents() {
         Ronni.events.append() { event in
             switch(event) {
                 case .didHide:
-                    print("did hide")
+                    print("Did hide")
                 break
                 
                 case .didButtonClick:
@@ -126,7 +126,7 @@ extension ViewController {
         }
     }
     
-    func randStyle () -> Style {
+    func randStyle() -> Style {
         return styles[Int(arc4random_uniform(UInt32(styles.count)))]
     }
 }
