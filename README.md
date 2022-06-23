@@ -5,7 +5,7 @@
 
 ## Description
 
-A convenient and easy to use library that will make the task of display messages simple. Message views can be displayed at the top or bottom. There are 4 different types already set up for you: Success, Error, Info, Loading, Toast, also you can create your own messages. Take a look at the Example project to see how to use this library. 
+A convenient and easy to use library that will make the task of display messages simple. Message views can be displayed at the top or bottom. There are 4 different types already set up for you: Success, Error, Info, Loading, Toast, also you can create your own messages.
 
 ## Example
 
@@ -98,7 +98,7 @@ pod 'Ronni'
 
 This project is licensed under the MIT license.
 
-Copyright (c) 2017 Dmitriy Zhyzhko
+Copyright (c) 2017 Dmytro Zhyzhko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
